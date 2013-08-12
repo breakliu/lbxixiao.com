@@ -1,0 +1,53 @@
+<% content_for :body do %>
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="#">控制台</a>
+      <div class="nav-collapse collapse">
+        <% if current_user %>
+          <%= render_list :class => "nav" do |li|
+            li << link_to("<i class='icon-file-alt'></i> 文章管理".html_safe, category_posts_path(Category.roots.first.children.first))
+            li << link_to("<i class='icon-sitemap'></i> 分类管理".html_safe, categories_path)
+            li << link_to("<i class='icon-sitemap'></i> 类型管理".html_safe, ctypes_path)
+          end %>
+        <% end %>
+        <%= render_list :class => "nav pull-right" do |li|
+          if current_user
+            li << link_to("<i class='icon-user'></i> #{current_user.email}".html_safe, '#')
+            li << link_to('<i class="icon-signout"></i> 注销'.html_safe, destroy_user_session_path, :method => :delete)
+          else
+            li << link_to('<i class="icon-signin"></i> 登录'.html_safe, new_session_path(:user))
+          end
+        end %>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <%= yield :sidebar %>
+      </div><!--/.well -->
+    </div><!--/span-->
+    <div class="span9">
+      <%= notice_message %>
+      <%= yield %>
+    </div><!--/row-->
+  </div><!--/span-->
+
+  <hr>
+
+  <footer>
+    <p>&copy; 东莞市寮步镇西溪小学 <%= Time.now.year %>  </p>
+  </footer>
+
+</div>
+<% end %>
+<%= render 'layouts/base' %>

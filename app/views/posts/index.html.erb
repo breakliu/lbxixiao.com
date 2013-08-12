@@ -1,0 +1,31 @@
+<div class="page-header">
+  <p><%= link_to '添加文章', new_category_post_path(@category), class: 'btn btn-primary' %></p>
+</div>
+
+<%= grid(@posts, hide_submit_button: true) do |g|
+
+  g.column name: "标题", attribute: "title"  do |post|
+    link_to post.title, '#', target: '_blank' if post.title
+  end
+
+  # g.column name: '分类', :attribute => 'category_id', custom_filter: Category.all.map { |c| [c.title, c.id]}, auto_reload:  true  do |post|
+  # g.column name: '分类', :attribute => 'category_id' do |post|
+  #   post.category.title if post.category
+  # end
+
+  g.column name: '创建时间', :attribute => 'created_at', :auto_reload => true, :helper_style => :calendar do |post|
+    post.created_at.strftime('%Y-%m-%d %H:%M:%S') if post.created_at
+  end
+
+
+  g.column do |post|
+    link_to '编辑', edit_category_post_path(@category, post), :class => 'btn btn-mini'
+  end
+  g.column do |post|
+    link_to '删除', category_post_path(@category, post), :method => :delete, :data => { :confirm => '你确定?' }, :class => 'btn btn-mini btn-danger'
+  end
+
+end -%>
+
+
+<%= render 'sidebar' %>

@@ -1,0 +1,6 @@
+<%= content_for :sidebar do %>
+<li class="nav-header">分类管理</li>
+<%= render_list :class => "nav nav-list" do |li|
+  li << link_to("分类列表", categories_path)
+end %>
+<% end %>

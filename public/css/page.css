@@ -1,0 +1,20 @@
+#page_menu { padding-top: 45px; padding-bottom: 15px;}
+#page_menu a { color: #878787; font-size: 16px; text-decoration: none; }
+#page_menu a.active { color: #333333; }
+#page_menu a:hover { color: #137759; }
+#page_menu a:nth-child(n+2){ margin-left: 50px; }
+
+#page_content .myrow { margin-top: 20px; width: 1000px; height: 460px; }
+#page_content .myrow .box { height: 460px; float: left; width: 326px; background-image: url('/images/box.png'); margin-bottom: 30px; }
+#page_content .myrow .box:hover { background-image: url('/images/box_hover.png'); }
+#page_content .myrow .box:nth-child(n+2) { margin-left: 0px; } 
+#page_content .myrow .box .inner { margin: 30px 30px 21px 30px; } 
+#page_content .myrow .box .inner .title { height: 50px; line-height: 25px; overflow: hidden} 
+#page_content .myrow .box .inner .title a { font-size: 18px; color: #1F9276; text-decoration: none; } 
+#page_content .myrow .box .inner .content { margin-top: 15px; height: 100px; line-height: 25px; overflow: hidden; } 
+#page_content .myrow .box .inner .content a { font-size: 14px; color: #535353; text-decoration: none; } 
+#page_content .myrow .box .inner .created_at { margin-top: 10px; font-size: 12px; color: #AAAAAA; } 
+#page_content .myrow .box .pic { margin-left: 10px; } 
+
+.pagination { display: none; }
+#infscr-loading { text-align: center; }

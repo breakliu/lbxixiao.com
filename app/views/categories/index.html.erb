@@ -1,0 +1,7 @@
+<p><%= link_to '新建分类', new_category_path, class: 'btn btn-primary' %></p>
+
+<ol class='sortable_tree' data-max-levels='3' data-rebuild-url='<%= rebuild_categories_url %>'>
+  <%= build_server_tree @categories, :type => :sortable %>
+</ol>
+
+<%= render 'sidebar' %>

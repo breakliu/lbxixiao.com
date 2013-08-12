@@ -1,0 +1,143 @@
+body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB W3",微软雅黑,黑体,Arial,Tahoma,sans-serif,serif; }
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  -webkit-box-shadow: inset 0 0px 0px #FAFAFA;
+  -moz-box-shadow: inset 0 0px 0px #FAFAFA;
+  box-shadow: inset 0 0px 0px #FAFAFA;
+  border-bottom: 4px solid #1DAC84;
+}
+.navbar .nav > li > a {
+  text-shadow: 0 0px 0 #FAFAFA;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner {
+  -webkit-box-shadow: 0 0px 0px #FAFAFA;
+  -moz-box-shadow: 0 0px 0px #FAFAFA;
+  box-shadow: 0 0px 0px #FAFAFA;
+
+  border-bottom: 1px solid #1DAC84;
+  font-size: 18px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 980px;
+}
+.navbar .brand {
+  padding: 0px;
+  margin-left: 0px;
+  height: 58px;
+  line-height: 58px;
+}
+
+.row_1 {
+  margin: 0 auto;
+  height: 380px;
+  width: 1170px;
+  background: #FAFAFA url('/images/row_1_bottom.png') no-repeat bottom;
+}
+.row_1-inner { 
+  margin: 0 auto;
+  width: 980px;
+  height: 380px;
+}
+#myCarousel .carousel-caption {
+  left: auto;
+  right: 0;
+  bottom: auto;
+  top: 50px;
+  background: #FAFAFA;
+  width: 280px;
+}
+#myCarousel .carousel-caption h4,
+#myCarousel .carousel-caption p {
+  color: #000;
+}
+#myCarousel .carousel-indicators {
+  top: 340px;
+  right: 15px;
+}
+#myCarousel .carousel-indicators li {
+  width: 36px;
+  height: 16px;
+  background-color: #FAFAFA;
+  border-radius: 0px;
+  background: #FAFAFA url('/images/slide_tab.png') no-repeat;
+}
+#myCarousel .carousel-indicators .active {
+  background: #FAFAFA url('/images/slide_tab_active.png') no-repeat;
+}
+.spliter1 { background-color: #2F9069; height: 3px; margin: 0 auto;}
+.container .row .span3 { height: 290px; }
+.container .row .span3 h3 { 
+  font-size: 21px; 
+  letter-spacing: 1pt; 
+  margin-top: 25px; 
+  height: 45px; 
+  border-bottom: 4px solid #AAAAAA; 
+  color: rgb(0,132,101);
+}
+#announcement ul li { 
+  font-size:14px;
+  padding-left: 5px; 
+  height: 30px; 
+  line-height: 30px; 
+  border-bottom: 1px dotted #FAFAFA;
+}
+#announcement ul li a {
+  color: #333333;
+}
+#announcement ul li a:hover {
+  color: #247251;
+  text-decoration: none;
+}
+#announcement ul li:hover {
+  color: #247251;
+  border-bottom: 1px dotted #247251;
+}
+#myCarousel2 { margin-top: 15px; }
+#myCarousel2 .carousel-inner {
+  border: 1px dotted #AAAAAA;
+}
+#myCarousel2 .carousel-inner img {
+  height: 140px;
+}
+#myCarousel2 .carousel-caption {
+  padding: 0px;
+}
+
+#big_title div h3 a { text-decoration: none; color: #008465; font-size: 21px; }
+#big_title div h3 a:hover { color: #2CAB80; }
+.myul { height: 150px; width: 390px; padding: 0; margin: 0; margin-top: 15px; }
+.myul li { width: 120px; float: left; padding: 0; margin: 0; line-height: 25px; }
+.myul li img { border: 1px dotted #AAAAAA; }
+.myul li a { text-decoration: none; color: #333333; }
+.myul li a:hover { color: #247251; border-bottom: 1px dotted #247251; }
+.myul .myfixed { margin-left: 12px; }
+
+#mylink1 { background-color: #EEE; height: 140px; margin: 0 auto; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px dashed #CCC;}
+#mylink1 h4 { font-size: 16px; color: #333; }
+#mylink1 div { width: 980px; margin: 0px auto;}
+#mylink1 ul { float: left; width: 160px; }
+#mylink1 ul li { height: 25px; line-height: 25px; }
+#mylink1 ul li a { text-decoration: none; color: #555; }
+#mylink1 ul li a:hover { color: #247251; border-bottom: 1px dotted #247251; }
+#mylink1 .padding { padding-left: 60px; border-left: 1px dotted #247251;  }
+#mylink1 .last { width: 100px; }
+
+#mylink2 { background-color: #EEE; height: 60px; margin: 0 auto; padding-top: 0px; border-bottom: 1px solid #CCC; font-size: 12px;}
+#mylink2 div { width: 980px; margin: 0 auto; }
+#mylink2 div span { display: block; float: left; width: 160px; line-height: 30px; }
+#mylink2 div span a { text-decoration: none; color: #555; }
+#mylink2 div span a:hover { color: #247251; border-bottom: 1px dotted #247251; }
+
+#myfooter { background-color: #F5F5F5; height: 140px; margin: 0 auto; padding-top: 10px; padding-bottom: 10px; color: #555; font-size: 12px;}
+#myfooter div { width: 980px; margin: 0 auto; }
+#myfooter ul { padding-top: 5px; padding-left: 30px; }
+#myfooter ul li a { text-decoration: none; color: #137759; }
+#myfooter ul li a:hover { color: #137759; border-bottom: 1px dotted #137759; }
+
+.login_link { color: #F5F5F5; }
+.login_link:hover { color: #137759; text-decoration: none; }

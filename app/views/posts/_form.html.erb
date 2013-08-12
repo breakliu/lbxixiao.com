@@ -1,0 +1,25 @@
+<style type="text/css">
+.nested_options .l_1 { disable: disabled; }
+</style>
+
+<h3> <%= @category.title %> </h3>
+<hr>
+
+<%= simple_form_for([@category, @post], html: {class: '' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%#= f.label '文章分类' %>
+    <%#= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" } %>
+    <%#= f.hint '文章分类不能为一级分类，即不能为：学校概况、校园动态、德育之窗、学生园地' %>
+    <%= f.input :content, as: :kindeditor %>
+    <%= f.hidden_field :category_id  %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= render 'sidebar' %>

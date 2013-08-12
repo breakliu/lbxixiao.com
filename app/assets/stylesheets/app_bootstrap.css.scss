@@ -1,0 +1,13 @@
+$navbarHeight: 55px;
+$navbarBackground: #FAFAFA;
+$navbarBackgroundHighlight: #FAFAFA;
+
+$navbarLinkColor: #19926F;
+$navbarLinkColorHover: #19926F;
+$navbarLinkColorActive: #19926F;
+$navbarLinkBackgroundHover: #FAFAFA;
+$navbarLinkBackgroundActive: #FAFAFA;
+
+// import original bootstrap
+@import "twitter/bootstrap";
+@import "twitter/bootstrap-responsive";

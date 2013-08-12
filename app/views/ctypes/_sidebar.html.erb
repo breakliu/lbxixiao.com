@@ -1,0 +1,6 @@
+<%= content_for :sidebar do %>
+<li class="nav-header">类型管理</li>
+<%= render_list :class => "nav nav-list" do |li|
+  li << link_to("类型列表", ctypes_path)
+end %>
+<% end %>

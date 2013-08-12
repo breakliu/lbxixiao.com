@@ -1,0 +1,100 @@
+<% content_for :body do %>
+<link rel="stylesheet" type="text/css" href="/css/custom.css">
+<style type="text/css">
+#page_menu { padding-top: 45px; padding-bottom: 15px;}
+#page_menu a { color: #878787; font-size: 16px; text-decoration: none; }
+#page_menu a.active { color: #333333; }
+#page_menu a:hover { color: #137759; }
+#page_menu a:nth-child(n+2){ margin-left: 50px; }
+</style>
+
+<%= render 'layouts/index_top_menu' %>
+
+<div class="container">
+  <div id="page_menu" class="text-center">
+    <% @tabs.each do |t| %>
+      <% if t.id == params[:children_id].to_i %>
+        <%= link_to t.title, page_path(t.root, t), class: 'active' %>
+      <% else %>
+        <%= link_to t.title, page_path(t.root, t) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="page_content">
+
+    <style type="text/css">
+    body { background: #ececec; margin: 0; }
+    .wrapper { position: relative; width: 900px; margin: 20px auto; }
+      .wrapper .grid {
+        width: 180px;
+        padding: 10px;
+        border: 1px solid #bbb;
+        background: #fefefe;
+        padding: 10px;
+        right: 0;
+        top: 0;
+        position: absolute;
+        box-shadow: 3px 3px 3px #ddd;
+      }
+        .wrapper .grid img { width: 100%; }
+
+    .loading { text-align: center; margin-top: 20px; font-size: 1.2em; }
+    .more { text-align: center; margin-top: 20px; display: none; }
+      .more input { width: 120px; height: 50px; font-size: 1.2em; }
+    </style>
+
+
+    <div id="wrapper" class="wrapper">
+      <div class="grid">
+        <p><img src="http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978011487.jpg" /></p>
+        <p>壁纸1</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360977997510.jpg" /></p>
+        <p>壁纸2</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978030990.jpg" /></p>
+        <p>壁纸3</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://pic.yesky.com/uploadImages/2013/011/7B00R7IKWG4A_140x105.jpg" /></p>
+        <p>壁纸4</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978066529.jpg" /></p>
+        <p>壁纸5</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://pic.yesky.com/uploadImages/2012/339/OAY95M0LP350_3.jpg" /></p>
+        <p>壁纸6</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978097711.jpg" /></p>
+        <p>壁纸7</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978112736.jpg" /></p>
+        <p>壁纸8</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://pic.yesky.com/uploadImages/2013/051/FLI956E34835.jpg" /></p>
+        <p>壁纸9</p>
+      </div>
+      <div class="grid">
+        <p><img src="http://pic.yesky.com/uploadImages/2012/339/VE9HZCTW6UOU_3.jpg" /></p>
+        <p>壁纸10</p>
+      </div>
+    </div>
+    <div id="loading" class="loading">加载中...</div>
+    <div id="more" class="more"><input type="button" value="更 多" id="clear" /></div>
+    <script src="/js/jraiser2/jraiser2.js"></script>
+    <script src="/js/jraiser2/config.js"></script>
+    <script src="/js/jraiser2/init-waterfall.js"></script>
+  </div>
+</div>
+
+
+<%= render 'layouts/footer' %>
+<% end %>
+<%= render 'layouts/base' %>

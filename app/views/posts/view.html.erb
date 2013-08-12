@@ -1,0 +1,34 @@
+<style type="text/css">
+#wrapper { margin-top: 35px; min-height: 300px; }
+#view_post_column1 { float: left; width: 85px; font-size: 32px; padding-left: 5px; }
+#view_post_column2 { float: left; width: 642px; }
+#view_post_column3 { float: left; width: 200px; margin-left: 40px; }
+
+#view_post_column2 .title { color: #209276; font-size: 32px; line-height: 100%; }
+#view_post_column2 .time { color: #878787; font-size: 14px; line-height: 100%; padding-top: 20px; }
+#view_post_column2 .content { color: #545454; font-size: 16px; line-height: 2em; padding-top: 20px; padding-bottom: 60px; }
+
+#wrapper a { text-decoration: none; color: #545454; }
+#wrapper a:hover { color: #008465; }
+
+#wrapper hr { border-top: 1px solid #CCCCCC; }
+</style>
+
+<div id="wrapper">
+  <div id="view_post_column1">
+    <%= link_to '<i class="icon-circle-arrow-left"></i>'.html_safe, page_path(@post.category.root, @post.category) %>
+  </div>
+
+  <div id="view_post_column2">
+    <div class="title"><%= @post.title %></div>
+    <div class="time"><%= @post.created_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
+    <div class="content"><%= raw @post.content %></div>
+  </div>
+
+  <div id="view_post_column3">
+    <div><%= link_to "上一篇: #{@post_prev.title}", view_post_path(@post_prev) if @post_prev %></div>
+    <hr>
+    <div><%= link_to "下一篇: #{@post_next.title}", view_post_path(@post_next) if @post_next %></div>  
+  </div>
+</div>
+

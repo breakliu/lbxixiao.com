@@ -1,0 +1,10 @@
+<%= content_for :sidebar do %>
+  <% Category.roots.each do |r| %>
+  <li class="nav-header"><%= r.title %></li>
+  <%= render_list :class => "nav nav-list" do |li|
+    r.children.each do |child|
+      li << link_to(child.title, category_posts_path(child))
+    end
+  end %>
+  <% end %>
+<% end %>

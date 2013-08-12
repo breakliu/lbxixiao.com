@@ -1,0 +1,66 @@
+<% content_for :body do %>
+<link rel="stylesheet" type="text/css" href="/css/custom.css">
+<style type="text/css">
+#page_menu { padding-top: 45px; padding-bottom: 15px;}
+#page_menu a { color: #878787; font-size: 16px; text-decoration: none; }
+#page_menu a.active { color: #333333; }
+#page_menu a:hover { color: #137759; }
+#page_menu a:nth-child(n+2){ margin-left: 50px; }
+
+#page_content .myrow { width: 1000px; height: 230px; background-image: url('/images/box-timeline.png');}
+#page_content .myrow:hover { background-image: url('/images/box-timeline-hover.png');}
+#page_content .myrow:last-child { background-image: url('/images/box-timeline-last.png');}
+#page_content .myrow:last-child:hover { background-image: url('/images/box-timeline-last-hover.png');}
+#page_content .year { height: 76px; font-size: 42px; padding-left: 60px; line-height: 180%; color: #AAA; }
+#page_content .year:first-child { background-image: url('/images/box-timeline-year-first.png');}
+#page_content .year:nth-child(n+2) { background-image: url('/images/box-timeline-year.png');}
+#page_content .myrow .inner { height: 230px; padding: 15px 12px; }
+#page_content .myrow .inner .created_at { font-size: 18px; color: #AAA; float: left; width: 150px; text-align: right; padding-top: 10px; }
+#page_content .myrow .inner .mycenter { float: left; width: 460px; margin-left: 30px; padding-top: 10px; }
+#page_content .myrow .inner .mycenter .title { height: 25px; margin-bottom: 15px; font-size: 24px; line-height: 100%; overflow: hidden; }
+#page_content .myrow .inner .mycenter .title a { color: #1F9276; text-decoration: none; }
+#page_content .myrow .inner .mycenter .content { height: 140px; line-height: 170%; font-size: 14px; overflow: hidden; }
+#page_content .myrow .inner .mycenter .content a { color: #555555; text-decoration: none; }
+#page_content .myrow .inner .pic { float: right; width: 306px; }
+
+.pagination { display: none; }
+#infscr-loading { text-align: center; }
+</style>
+<script src="/js/jquery.infinitescroll.js"></script>  
+
+<%= render 'layouts/index_top_menu' %>
+
+<div class="container">
+  <div id="page_menu" class="text-center">
+    <% @tabs.each do |t| %>
+      <% if t.id == params[:children_id].to_i %>
+        <%= link_to t.title, page_path(t.root, t), class: 'active' %>
+      <% else %>
+        <%= link_to t.title, page_path(t.root, t) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="page_content">
+    <div class="year"></div>
+    <% @posts.each do |p| %>
+    <div class="myrow">
+      <div class="inner">
+        <div class="created_at"><%= p.created_at.strftime('%Y年%m月%d日') %></div>
+        <div class="mycenter">
+          <div class="title"><a href="<%= view_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a></div>
+          <div class="content"><a href="<%= view_post_path(p) %>"><%= h strip_tags(p.content)[0,300] %></a></div>
+        </div>
+        
+        <div class="pic"><a href="<%= view_post_path(p) %>"><%= image_tag asset_path('pic.jpg'), width: '306', height: '200' %></a></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div id="mypaginate"><%= paginate @posts %></div>
+</div>
+
+
+<%= render 'layouts/footer' %>
+<% end %>
+<%= render 'layouts/base' %>
