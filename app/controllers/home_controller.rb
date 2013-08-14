@@ -15,6 +15,9 @@ class HomeController < ApplicationController
     end
 
     # 不同情况使用不同的模版
-    render layout: children.ctype.page_tpl
+    respond_to do |format|
+      format.html { render layout: children.ctype.page_tpl }
+      format.json
+    end
   end
 end

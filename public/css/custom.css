@@ -47,14 +47,12 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
   left: auto;
   right: 0;
   bottom: auto;
-  top: 50px;
+  top: 0px;
   background: #FAFAFA;
   width: 280px;
 }
-#myCarousel .carousel-caption h4,
-#myCarousel .carousel-caption p {
-  color: #000;
-}
+#myCarousel .carousel-caption p.title { color: #19926F; font-size: 46px; }
+#myCarousel .carousel-caption p { color: #000; font-size: 14px; line-height: 200%; }
 #myCarousel .carousel-indicators {
   top: 340px;
   right: 15px;
@@ -86,6 +84,14 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
   line-height: 30px; 
   border-bottom: 1px dotted #FAFAFA;
 }
+#announcement ul li span.title {
+  width: 220px; 
+  overflow: hidden; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  height: 30px;
+  white-space: nowrap;
+}
 #announcement ul li a {
   color: #333333;
 }
@@ -112,10 +118,11 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
 #big_title div h3 a:hover { color: #2CAB80; }
 .myul { height: 150px; width: 390px; padding: 0; margin: 0; margin-top: 15px; }
 .myul li { width: 120px; float: left; padding: 0; margin: 0; line-height: 25px; }
-.myul li img { border: 1px dotted #AAAAAA; }
-.myul li a { text-decoration: none; color: #333333; }
-.myul li a:hover { color: #247251; border-bottom: 1px dotted #247251; }
-.myul .myfixed { margin-left: 12px; }
+.myul li .pic img { height: 80px; width: 120px; border: 1px dotted #AAAAAA; }
+.myul li .title{ height: 75px; overflow: hidden; }
+.myul li .title a { text-decoration: none; color: #333333; }
+.myul li .title a:hover { color: #247251; border-bottom: 1px dotted #247251; }
+.myul li:nth-child(n+2) { margin-left: 12px; }
 
 #mylink1 { background-color: #EEE; height: 140px; margin: 0 auto; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px dashed #CCC;}
 #mylink1 h4 { font-size: 16px; color: #333; }

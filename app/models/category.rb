@@ -5,6 +5,8 @@ class Category < ActiveRecord::Base
   belongs_to :ctype
   has_many :posts
 
+  scope :on_top, -> { where(on_top: true) }
+
   def next(id)
     posts.where("id > ?", id).order(id: :desc).last
   end

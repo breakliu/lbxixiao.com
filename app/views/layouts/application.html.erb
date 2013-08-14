@@ -7,34 +7,21 @@
   <div class="row_1-inner">
     <div id="myCarousel" class="carousel slide">
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <% Category.roots.first.children.first.posts.order(id: :asc).each_with_index do |p, index| %>
+        <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= "active" if index == 0 %>"></li>
+        <!-- <li data-target="#myCarousel" data-slide-to="1"></li> -->
+        <% end %>
       </ol>
       <div class="carousel-inner">
-        <div class="item active">
-          <img src="<%= image_path('http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978011487.jpg') %>" alt="" width="660" height="380">
+        <% Category.roots.first.children.first.posts.order(id: :asc).each_with_index do |p, index| %>
+        <div class="item <%= "active" if index == 0 %>">
+          <img src="<%= p.image.thumb1.url %>" alt="" width="660" height="380">
           <div class="carousel-caption">
-            <h4>First Thumbnail label</h4>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p class="title"><%= p.title %></p>
+            <p><%= p.content %></p>
           </div>
         </div>
-        <div class="item">
-          <img src="<%= image_path('http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360977997510.jpg') %>" alt="" width="660" height="380">
-          <div class="carousel-caption">
-            <h4>Second Thumbnail label</h4>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          </div>
-        </div>
-        <div class="item">
-          <img src="<%= image_path('http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978030990.jpg') %>" alt="" width="660" height="380">
-          <div class="carousel-caption">
-            <h4>Third Thumbnail label</h4>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -43,11 +30,18 @@
 <div class="container">
   <div id="big_title" class="row">
     <div class="span3" style="width: 390px;">
-      <h3><a href="#">校园新闻 <i class="icon-circle-arrow-right"></i></a></h3>
+      <h3><a href="<%= page_path(8,9) %>">校园新闻 <i class="icon-circle-arrow-right"></i></a></h3>
       <ul class="unstyled myul">
-        <li><a href="#"><img src="<%= image_path('http://pic.yesky.com/uploadImages/2013/011/7B00R7IKWG4A_140x105.jpg') %>" alt="" width="120" height="80">西溪小学组织师生收看王亚平太空授课</a></li>
-        <li class="myfixed"><a href="#"><img src="<%= image_path('http://b.zol-img.com.cn/desk/bizhi/image/2/144x90/1360978066529.jpg') %>" alt="" width="120" height="80">我这是超级无级大帅哥</a></li>
-        <li class="myfixed"><a href="#"><img src="<%= image_path('http://pic.yesky.com/uploadImages/2012/339/OAY95M0LP350_3.jpg') %>" alt="" width="120" height="80">我这是超级无级大帅哥</a></li>
+        <% Category.find(9).posts.limit(3).each do |post| %>
+        <li>
+          <div class="pic">
+            <a href="<%= view_post_path(post) %>" title="<%= post.title %>"><%= image_tag post.image.thumb4.url %></a>
+          </div>
+          <div class="title">
+            <a href="<%= view_post_path(post) %>" title="<%= post.title %>"><%= post.title %></a>
+          </div>
+        </li>
+        <% end %>
       </ul>
     </div>
     <div class="span3" style="width: 220px;">
@@ -82,17 +76,29 @@
       </div>
     </div>
     <div id="announcement" class="span3" style="width: 300px;">
-      <h3><a href="#">最新公告 <i class="icon-circle-arrow-right"></i></a></h3>
+      <h3><a href="<%= page_path(8,11) %>">最新公告 <i class="icon-circle-arrow-right"></i></a></h3>
       <ul class="unstyled">
-        <li><a href="#"><i class="icon-angle-right icon-large"></i> 这里是校园动态哈哈哈哈哈哈...<span class="pull-right">2013-11-11</span></a></li>
-        <li><a href="#"><i class="icon-angle-right icon-large"></i> 这里是校园动态哈哈哈哈哈哈...<span class="pull-right">2013-11-11</span></a></li>
-        <li><a href="#"><i class="icon-angle-right icon-large"></i> 这里是校园动态哈哈哈哈哈哈...<span class="pull-right">2013-11-11</span></a></li>
-        <li><a href="#"><i class="icon-angle-right icon-large"></i> 这里是校园动态哈哈哈哈哈哈...<span class="pull-right">2013-11-11</span></a></li>
-        <li><a href="#"><i class="icon-angle-right icon-large"></i> 这里是校园动态哈哈哈哈哈哈...<span class="pull-right">2013-11-11</span></a></li>
+        <% Category.find(11).posts.limit(5).each do |p| %>
+        <li>
+          <span class="title pull-left">
+            <a href="<%= view_post_path(p) %>" title="<%= p.title %>"><i class="icon-angle-right icon-large"></i> <%= p.title %></a>
+          </span>
+          <span class="pull-right"><%= p.created_at.strftime('%Y-%m-%d') %></span>
+        </li>
+        <% end %>
       </ul>
     </div>
   </div><!--/row-->
 </div>
+
+<script type="text/javascript">
+$('#myCarousel').carousel({
+  interval: 8000
+})
+$('#myCarousel2').carousel({
+  interval: 10000
+})
+</script>
 
 <%= render 'layouts/footer' %>
 <% end %>

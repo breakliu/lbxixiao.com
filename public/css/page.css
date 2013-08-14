@@ -15,6 +15,7 @@
 #page_content .myrow .box .inner .content a { font-size: 14px; color: #535353; text-decoration: none; } 
 #page_content .myrow .box .inner .created_at { margin-top: 10px; font-size: 12px; color: #AAAAAA; } 
 #page_content .myrow .box .pic { margin-left: 10px; } 
+#page_content .myrow .box .pic img { width: 306px; height: 200px; } 
 
 .pagination { display: none; }
 #infscr-loading { text-align: center; }

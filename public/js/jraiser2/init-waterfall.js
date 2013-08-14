@@ -7,9 +7,9 @@ require(['dom/1.0.x/', 'waterfall/1.1.x/'], function($, Waterfall) {
       '<p><%-data[i].text%></p>' +
     '</div>' +
     '<% } %>',
-    dataURL: '/data.js',
+    dataURL: '/c/3/7.json',
     dataType: 'json',
-    rowSpacing: 130,
+    rowSpacing: 30,
     fixedImgSize: false,
     prefetch: '20%'
   });

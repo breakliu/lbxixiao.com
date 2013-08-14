@@ -22,6 +22,7 @@
 #page_content .myrow .inner .mycenter .content { height: 140px; line-height: 170%; font-size: 14px; overflow: hidden; }
 #page_content .myrow .inner .mycenter .content a { color: #555555; text-decoration: none; }
 #page_content .myrow .inner .pic { float: right; width: 306px; }
+#page_content .myrow .inner .pic img { width: 306px; height: 200px; }
 
 .pagination { display: none; }
 #infscr-loading { text-align: center; }
@@ -51,7 +52,7 @@
           <div class="content"><a href="<%= view_post_path(p) %>"><%= h strip_tags(p.content)[0,300] %></a></div>
         </div>
         
-        <div class="pic"><a href="<%= view_post_path(p) %>"><%= image_tag asset_path('pic.jpg'), width: '306', height: '200' %></a></div>
+        <div class="pic"><a href="<%= view_post_path(p) %>"><%= image_tag p.image.thumb2.url if p.image.thumb2.url %></a></div>
       </div>
     </div>
     <% end %>

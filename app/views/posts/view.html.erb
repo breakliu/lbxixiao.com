@@ -6,6 +6,7 @@
 
 #view_post_column2 .title { color: #209276; font-size: 32px; line-height: 100%; }
 #view_post_column2 .time { color: #878787; font-size: 14px; line-height: 100%; padding-top: 20px; }
+#view_post_column2 .pic img { margin-top: 30px; }
 #view_post_column2 .content { color: #545454; font-size: 16px; line-height: 2em; padding-top: 20px; padding-bottom: 60px; }
 
 #wrapper a { text-decoration: none; color: #545454; }
@@ -22,6 +23,7 @@
   <div id="view_post_column2">
     <div class="title"><%= @post.title %></div>
     <div class="time"><%= @post.created_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
+    <div class="pic"><%= image_tag @post.image.url if @post.image.url %></div>
     <div class="content"><%= raw @post.content %></div>
   </div>
 
