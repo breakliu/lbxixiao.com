@@ -3,7 +3,7 @@ require(['dom/1.0.x/', 'waterfall/1.1.x/'], function($, Waterfall) {
     wrapper: $('#wrapper'),
     template: '<% for (var i = 0; i < data.length; i++) { %>' +
     '<div class="grid">' +
-      '<p><img src="<%=data[i].img%>" /></p>' +
+      '<p><a class="group1" href="<%=data[i].url%>" title="<%-data[i].text%>"><img src="<%=data[i].img%>" /></a></p>' +
       '<p><%-data[i].text%></p>' +
     '</div>' +
     '<% } %>',

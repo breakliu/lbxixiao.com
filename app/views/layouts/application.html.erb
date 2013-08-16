@@ -18,7 +18,7 @@
           <img src="<%= p.image.thumb1.url %>" alt="" width="660" height="380">
           <div class="carousel-caption">
             <p class="title"><%= p.title %></p>
-            <p><%= p.content %></p>
+            <p><%= strip_tags p.content %></p>
           </div>
         </div>
         <% end %>

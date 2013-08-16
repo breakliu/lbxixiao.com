@@ -1,5 +1,6 @@
 <% content_for :body do %>
 <link rel="stylesheet" type="text/css" href="/css/custom.css">
+<link rel="stylesheet" type="text/css" href="/colorbox/colorbox.css">
 <style type="text/css">
 #page_menu { padding-top: 45px; padding-bottom: 15px;}
 #page_menu a { color: #878787; font-size: 16px; text-decoration: none; }
@@ -20,7 +21,7 @@
   box-shadow: 3px 3px 3px #ddd;
   height: 150px; 
 }
-.wrapper .grid img { width: 100%; }
+.wrapper .grid img { width: 100%; width: 180px; height: 112px; }
 
 .loading { text-align: center; margin-top: 20px; font-size: 1.2em; }
 .more { text-align: center; margin-top: 20px; display: none; }
@@ -43,7 +44,7 @@
     <div id="wrapper" class="wrapper">
       <% @posts.each do |post| %>
       <div class="grid">
-        <p><img src="" /></p>
+        <p><a class="group1" href="<%= post.image.url %>" title="<%= post.title %>"><%= image_tag post.image.thumb3.url %></a></p>
         <p><%= post.title %></p>
       </div>
       <% end %>
@@ -53,6 +54,13 @@
     <script src="/js/jraiser2/jraiser2.js"></script>
     <script src="/js/jraiser2/config.js"></script>
     <script src="/js/jraiser2/init-waterfall.js"></script>
+    <script src="/colorbox/jquery.colorbox-min.js"></script>
+    <script src="/colorbox/jquery.colorbox-zh-CN.js"></script>
+    <script type="text/javascript">
+    $("#wrapper").bind("DOMSubtreeModified", function() {
+      $(".group1").colorbox({rel:'group1'});
+    });
+    </script>
   </div>
 </div>
 

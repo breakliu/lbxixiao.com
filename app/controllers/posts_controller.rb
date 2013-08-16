@@ -68,7 +68,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to category_posts_path(params[:category_id]) }
       format.json { head :no_content }
     end
   end
