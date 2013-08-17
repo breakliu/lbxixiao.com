@@ -1,0 +1,30 @@
+<% content_for :body do %>
+<link rel="stylesheet" type="text/css" href="/css/custom.css">
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<style type="text/css">
+#page_content { margin: 30px 120px 80px 120px; font-size: 18px; line-height: 2em; }
+</style>
+
+<%= render 'layouts/index_top_menu' %>
+
+<div class="container">
+  <div id="page_menu" class="text-center">
+    <% @tabs.each do |t| %>
+      <% if t.id == params[:children_id].to_i %>
+        <%= link_to t.title, page_path(t.root, t), class: 'active' %>
+      <% else %>
+        <%= link_to t.title, page_path(t.root, t) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="page_content">
+    <% if post = @posts.first %>
+    <%= raw post.content %>
+    <% end %>
+  </div>
+</div>
+
+
+<%= render 'layouts/footer' %>
+<% end %>
+<%= render 'layouts/base' %>

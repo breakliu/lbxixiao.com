@@ -25,7 +25,7 @@
     <%#= f.label '文章分类' %>
     <%#= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" } %>
     <%#= f.hint '文章分类不能为一级分类，即不能为：学校概况、校园动态、德育之窗、学生园地' %>
-    <%= f.input :content, as: :kindeditor %>
+    <%= f.input :content, as: :kindeditor, input_html: { cssData: '.ke-content {font-size: 18px; line-height: 2em;}' } %>
     <%= f.hidden_field :category_id  %>
   </div>
 
