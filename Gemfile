@@ -16,7 +16,7 @@ gem 'rolify', ">= 3.3.0.rc4"
 gem 'kaminari'
 
 # Bootstrap
-#gem "therubyracer"
+gem "therubyracer"
 #gem 'twitter-bootstrap-rails'
 #gem "less-rails"
 gem 'anjlab-bootstrap-rails', '2.3.1.2', :require => 'bootstrap-rails'
@@ -67,6 +67,7 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'rainbows'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
