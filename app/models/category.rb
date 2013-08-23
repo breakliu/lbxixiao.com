@@ -1,4 +1,6 @@
 class Category < ActiveRecord::Base
+  mount_uploader :image, CimageUploader
+
   acts_as_nested_set
   include TheSortableTree::Scopes
 

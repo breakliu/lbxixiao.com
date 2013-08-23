@@ -15,12 +15,11 @@
       <div class="controls">
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
-        <%= link_to image_tag(@post.image_url), @post.image_url, target: '_blank' if @post.image? %>
+        <%= link_to image_tag(@post.image.thumb4.url), @post.image.thumb4.url, target: '_blank' if @post.image? %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :remove_image %><%= f.check_box :remove_image %>
-
     </div>
     <%#= f.label '文章分类' %>
     <%#= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" } %>

@@ -1,0 +1,9 @@
+<div id="page_menu" class="text-center">
+  <% @tabs.each do |t| %>
+    <% if t.id == params[:children_id].to_i %>
+      <%= link_to t.title, page_path(t.root, t), class: 'active' %>
+    <% else %>
+      <%= link_to t.title, page_path(t.root, t) %>
+    <% end %>
+  <% end %>
+</div>

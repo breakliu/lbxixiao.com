@@ -11,15 +11,7 @@
 <%= render 'layouts/index_top_menu' %>
 
 <div class="container">
-  <div id="page_menu" class="text-center">
-    <% @tabs.each do |t| %>
-      <% if t.id == params[:children_id].to_i %>
-        <%= link_to t.title, page_path(t.root, t), class: 'active' %>
-      <% else %>
-        <%= link_to t.title, page_path(t.root, t) %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'layouts/page_menu' %>
   <div id="page_content">
     <% @posts.each_slice(3) do |ps| %>
     <div class="myrow">
@@ -30,9 +22,9 @@
             <a href="<%= view_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a>
           </div>
           <div class="content">
-            <a href="<%= view_post_path(p) %>"><%= h strip_tags(p.content)[0,100] %></a>
+            <a href="<%= view_post_path(p) %>"><%= strip_tags(p.content)[0,100].html_safe %></a>
           </div>
-          <div class="created_at"><%= p.created_at.strftime('%Y年%m月%d日') %></div>
+          <div class="created_at"><%= time_ago_in_words(p.created_at) %>之前</div>
         </div>
       </div>
       <% end %>

@@ -32,7 +32,8 @@ DglbxxCom::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   get "c/:category_id/:children_id" => 'home#page', as: 'page'
-  get "p/:id" => 'posts#view', as: 'view_post'
+  get "topic/:category_id/:children_id" => 'home#topic', as: 'topic'
+  get "post/:id" => 'posts#view', as: 'view_post'
   #get "c/:category_id/:children_id" => 'home#page', as: 'content'
   #get "home/index"
   root "home#index"

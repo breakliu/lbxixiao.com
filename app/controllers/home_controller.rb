@@ -20,4 +20,18 @@ class HomeController < ApplicationController
       format.json
     end
   end
+
+  def topic
+    @category = Category.find(params[:category_id])
+    @children = Category.find(params[:children_id])
+
+    @posts = @children.posts.page(params[:page]).per(6)
+    @tabs = @category.children
+
+    # 不同情况使用不同的模版
+    respond_to do |format|
+      format.html { render layout: @children.ctype.page_tpl }
+      format.json
+    end
+  end
 end

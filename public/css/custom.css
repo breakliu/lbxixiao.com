@@ -67,6 +67,7 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
 #myCarousel .carousel-indicators .active {
   background: #FAFAFA url('/images/slide_tab_active.png') no-repeat;
 }
+#myCarousel .carousel-inner > .item > img { width: 660px; height: 380px; }
 .spliter1 { background-color: #2F9069; height: 3px; margin: 0 auto;}
 .container .row .span3 { height: 290px; }
 .container .row .span3 h3 { 
@@ -108,6 +109,7 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
   border: 1px dotted #AAAAAA;
 }
 #myCarousel2 .carousel-inner img {
+  width: 220px;
   height: 140px;
 }
 #myCarousel2 .carousel-caption {

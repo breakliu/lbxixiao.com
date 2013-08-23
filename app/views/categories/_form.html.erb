@@ -1,10 +1,22 @@
-<%= simple_form_for(@category) do |f| %>
+<%= simple_form_for(@category, html: { multipart: true }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.association :ctype %>
     <%= f.input :on_top %>
+
+    <div class="control-group">
+      <%= f.label :image %>
+      <div class="controls">
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
+        <%= link_to image_tag(@category.image.thumb.url), @category.image.thumb.url, target: '_blank' if @category.image? %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :remove_image %><%= f.check_box :remove_image %>
+    </div>
   </div>
 
   <div class="form-actions">

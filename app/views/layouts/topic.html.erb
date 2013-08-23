@@ -6,7 +6,15 @@
 <%= render 'layouts/index_top_menu' %>
 
 <div class="container">
-  <%= render 'layouts/page_menu' %>
+  <div id="page_menu" class="text-center">
+    <% @tabs.each do |t| %>
+      <% if t.id == @children.id %>
+        <%= link_to t.title, topic_path(@category, t.id), class: 'active' %>
+      <% else %>
+        <%= link_to t.title, topic_path(@category, t.id) %>
+      <% end %>
+    <% end %>
+  </div>
   <div id="page_content">
     <% @posts.each_slice(3) do |ps| %>
     <div class="myrow">
@@ -19,7 +27,7 @@
           <div class="content">
             <a href="<%= view_post_path(p) %>"><%= strip_tags(p.content)[0,100].html_safe %></a>
           </div>
-          <div class="created_at"><%= time_ago_in_words(p.created_at) %>之前</div>
+          <div class="created_at"><%= time_ago_in_words(p.created_at) %></div>
         </div>
         <div class="pic"><a href="<%= view_post_path(p) %>"><%= image_tag p.image.thumb2.url if p.image.thumb2.url %></a></div>
       </div>

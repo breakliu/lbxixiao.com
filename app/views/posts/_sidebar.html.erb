@@ -3,7 +3,15 @@
   <li class="nav-header"><%= r.title %></li>
   <%= render_list :class => "nav nav-list" do |li|
     r.children.each do |child|
-      li << link_to(child.title, category_posts_path(child))
+      cs = child.children
+      unless cs.blank?
+        li << child.title
+        cs.each do |c|
+          li << link_to(' - ' + c.title, category_posts_path(c))
+        end
+      else
+        li << link_to(child.title, category_posts_path(child))
+      end
     end
   end %>
   <% end %>

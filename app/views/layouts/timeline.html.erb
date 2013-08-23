@@ -32,24 +32,16 @@
 <%= render 'layouts/index_top_menu' %>
 
 <div class="container">
-  <div id="page_menu" class="text-center">
-    <% @tabs.each do |t| %>
-      <% if t.id == params[:children_id].to_i %>
-        <%= link_to t.title, page_path(t.root, t), class: 'active' %>
-      <% else %>
-        <%= link_to t.title, page_path(t.root, t) %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render 'layouts/page_menu' %>
   <div id="page_content">
     <div class="year"></div>
     <% @posts.each do |p| %>
     <div class="myrow">
       <div class="inner">
-        <div class="created_at"><%= p.created_at.strftime('%Y年%m月%d日') %></div>
+        <div class="created_at"><%= time_ago_in_words(p.created_at) %>之前</div>
         <div class="mycenter">
           <div class="title"><a href="<%= view_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a></div>
-          <div class="content"><a href="<%= view_post_path(p) %>"><%= h strip_tags(p.content)[0,300] %></a></div>
+          <div class="content"><a href="<%= view_post_path(p) %>"><%= strip_tags(p.content)[0,300].html_safe %></a></div>
         </div>
         
         <div class="pic"><a href="<%= view_post_path(p) %>"><%= image_tag p.image.thumb2.url if p.image.thumb2.url %></a></div>
