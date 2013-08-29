@@ -5,7 +5,7 @@
 <%= grid(@posts, hide_submit_button: true) do |g|
 
   g.column name: "标题", attribute: "title"  do |post|
-    link_to post.title, '#', target: '_blank' if post.title
+    link_to post.title, view_post_path(post), target: '_blank' if post.title
   end
 
   # g.column name: '分类', :attribute => 'category_id', custom_filter: Category.all.map { |c| [c.title, c.id]}, auto_reload:  true  do |post|

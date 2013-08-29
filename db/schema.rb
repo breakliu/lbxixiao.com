@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130818081217) do
+ActiveRecord::Schema.define(version: 20130829170701) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20130818081217) do
   add_index "posts", ["category_id"], name: "index_posts_on_category_id"
   add_index "posts", ["id"], name: "index_posts_on_id"
 
+  create_table "top_links", force: true do |t|
+    t.string   "title"
+    t.text     "href"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "top_links", ["id"], name: "index_top_links_on_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -65,6 +74,7 @@ ActiveRecord::Schema.define(version: 20130818081217) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role",                   default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

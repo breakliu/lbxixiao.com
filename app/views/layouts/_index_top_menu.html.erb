@@ -2,10 +2,9 @@
   <div class="top-links-inner">
     <div class="pull-right">
       <ul class="unstyled">
-        <li><a href="http://xyd.csepa.cn/" target='_blank'>《小雨点》</a></li>
-        <li><a href="http://lbxixiao.vip.qikan.com/index.aspx" target='_blank'>电子期刊</a></li>
-        <li><a href="http://blog.lbxixiao.com/" target='_blank'>教师博客</a></li>
-        <li><a href="http://lbxixiao.blog.163.com/" target='_blank'>学生博客</a></li>
+        <% TopLink.all.each do |link| %>
+        <li><%= link_to link.title, link.href, target: '_blank' %></li>
+        <% end %>
       </ul>
     </div>
   </div>

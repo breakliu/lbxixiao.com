@@ -1,0 +1,31 @@
+<h1>Listing top_links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Href</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @top_links.each do |top_link| %>
+      <tr>
+        <td><%= top_link.title %></td>
+        <td><%= top_link.href %></td>
+        <td><%= link_to 'Show', top_link %></td>
+        <td><%= link_to 'Edit', edit_top_link_path(top_link) %></td>
+        <td><%= link_to 'Destroy', top_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Top link', new_top_link_path %>
+
+<%= render 'sidebar' %>

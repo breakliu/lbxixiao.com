@@ -23,7 +23,7 @@
             <a href="<%= topic_path(p, p.children.first) %>" title="<%= p.title %>"><%= p.title %></a>
           </div>
         </div>
-        <div class="pic"><a href="<%= view_post_path(p) %>"><%= image_tag p.image.thumb.url if p.image.thumb.url %></a></div>
+        <div class="pic"><a href="<%= topic_path(p, p.children.first) %>"><%= image_tag p.image.thumb.url if p.image.thumb.url %></a></div>
       </div>
       <% end %>
     </div>

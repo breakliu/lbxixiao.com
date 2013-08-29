@@ -1,4 +1,6 @@
 DglbxxCom::Application.routes.draw do
+  resources :top_links
+
   resources :ctypes do
     collection do
       get  :manage

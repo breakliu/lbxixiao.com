@@ -2,6 +2,8 @@ class CtypesController < ApplicationController
   include TheSortableTreeController::Rebuild
 
   layout 'admin'
+  before_action :authenticate_user!
+  before_action :check_admin
   before_action :set_ctype, only: [:show, :edit, :update, :destroy]
 
   # GET /ctypes

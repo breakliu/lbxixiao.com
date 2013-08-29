@@ -11,9 +11,10 @@
       <div class="nav-collapse collapse">
         <% if current_user %>
           <%= render_list :class => "nav" do |li|
-            li << link_to("<i class='icon-file-alt'></i> 文章管理".html_safe, category_posts_path(Category.roots.first.children.first))
-            li << link_to("<i class='icon-sitemap'></i> 分类管理".html_safe, categories_path)
-            li << link_to("<i class='icon-sitemap'></i> 类型管理".html_safe, ctypes_path)
+            li << link_to("文章管理".html_safe, category_posts_path(Category.roots.first.children.first))
+            li << link_to("顶部链接".html_safe, top_links_path)
+            li << link_to("分类管理".html_safe, categories_path)
+            li << link_to("类型管理".html_safe, ctypes_path)
           end %>
         <% end %>
         <%= render_list :class => "nav pull-right" do |li|

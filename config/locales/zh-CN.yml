@@ -2,15 +2,10 @@ zh-CN:
   activerecord:
     models:
       user: "用户"
-      cms_ctype: "内容分类"
-      cms_subtype: "子分类"
-      cms_post: "文章"
-      cms_data_collection: "数据上报"
-      cms_data_tpl: "字段"
-      topic_site: "专题网站"
-      topic_site_post: "专题网站文章"
-      topic_site_ctype: "专题网站内容分类"
-      task: "任务"
+      post: "文章"
+      category: "分类"
+      ctype: "内容类型"
+      top_link: "顶部链接"
     attributes:
       user:
         username: "用户名"
@@ -23,59 +18,24 @@ zh-CN:
         remember_me: "记住登录状态"
         current_password: "当前密码"
         department: "部门"
-      cms_ctype:
-        created_at: '创建时间'
-        name: '名称'
-      cms_subtype:
-        created_at: '创建时间'
-        name: '名称'
-        cms_ctype_id: '父分类'
-      cms_post:
-        title: '标题'
-        subtitle: '副标题'
-        content: '内容'
-        cms_ctype: '类别'
-        cms_subtype: '子分类'
-        created_at: '创建时间'
-      cms_data_collection:
-        title: '标题'
-        subtitle: '副标题'
-        created_at: '创建时间'
-        content: '摘要说明'
-      cms_data_tpl:
-        name: "字段名称"
-        note: "字段备注"
-        cms_data_type: "字段类型"
-        position: "序号"
-        created_at: '创建时间'
-      topic_site:
-        name: "名称"
-        created_at: "创建时间"
-      topic_site_post:
-        name: "名称"
-        content: "内容"
-        topic_site_ctype: "专题网站分类"
-        topic_site: "专题网站"
-        created_at: '创建时间'
-        image: '文章大图'
-        remove_image: "清除文章大图"
-      topic_site_ctype:
-        name: "名称"
-        topic_site: "专题网站"
-        position: "序号"
-        parent_id: "父级分类"
-        created_at: '创建时间'
-      task:
-        name: "任务名称"
-        persons: "负责人员"
-        interval: "提醒周期"
-        start_time: "开始时间"
-        stop_time: "结束时间"
-        created_at: "创建时间"
-        content: '任务内容'
-        status: '状态'
-        user: '发起人'
-         
+      post:
+        title: "标题"
+        content: "正文内容"
+        image: "图片"
+        remove_image: "删除此图片"
+      category:
+        title: "标题"
+        ctype: "内容类型"
+        on_top: "在首页显示"
+        image: "分类图片(主要用于专题)"
+        remove_image: "删除此图片"
+      ctype:
+        title: "标题"
+        page_tpl: "layout模板名称"
+      top_link:
+        title: "标题"
+        href: "超链接"
+
   helpers:
     links:
       cancel: '取 消'

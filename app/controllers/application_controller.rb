@@ -19,6 +19,12 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def check_admin
+    if current_user
+      redirect_to admin_index_path unless current_user.role == -1
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
