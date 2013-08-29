@@ -45,16 +45,16 @@
       </ul>
     </div>
     <div class="span3" style="width: 220px;">
-      <h3><a href="#">专题 <i class="icon-circle-arrow-right"></i></a></h3>
+      <h3><a href="<%= topic_index_path %>">专题 <i class="icon-circle-arrow-right"></i></a></h3>
       <div id="myCarousel2" class="carousel slide">
         <ol class="carousel-indicators">
-          <% Category.find(23).children.on_top.each_with_index do |c, index| %>
+          <% Category.find(23).children.on_top.limit(5).each_with_index do |c, index| %>
           <li data-target="#myCarousel2" data-slide-to="<%= index %>" class="<%= "active" if index == 0 %>"></li>
           <% end %>
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <% Category.find(23).children.on_top.each_with_index do |c, index| %>
+          <% Category.find(23).children.on_top.limit(5).each_with_index do |c, index| %>
           <div class="item <%= "active" if index == 0 %>">
             <a href="<%= topic_path(c, c.children.first) %>">
               <img src="<%= c.image.thumb.url %>">

@@ -2,41 +2,22 @@
 
 <div id="mylink1">
   <div>
+  <% Category.on_top.roots.each do |r| %>
   <ul class="unstyled">
-    <li><h4><a href="#">学校概况</a></h4></li>
-    <li><a href="#">学校简介</a></li>
-    <li><a href="#">校长寄语</a></li>
-    <li><a href="#">教师风采</a></li>
-    <li><a href="#">校园风光</a></li>
+    <li><h4><%= r.title %></h4></li>
+    <% r.children.each do |c| %>
+    <li><%= link_to c.title, page_path(r, c) %></li>
+    <% end %>
   </ul>
-  <ul class="unstyled">
-    <li><h4>校园动态</h4></li>
-    <li>校园新闻</li>
-    <li>校园大事记</li>
-    <li>最新公告</li>
-  </ul>
-  <ul class="unstyled">
-    <li><h4>德育之窗</h4></li>
-    <li>实践活动</li>
-    <li>大队信息</li>
-    <li>点滴体会</li>
-  </ul>
-  <ul class="unstyled">
-    <li><h4>学生园地</h4></li>
-    <li>每月之星</li>
-    <li>优秀学生</li>
-    <li>书画作品</li>
-    <li>优秀习作</li>
-  </ul>
+  <% end %>
   <ul class="unstyled padding">
-    <li><h4>学校站点链接</h4></li>
-    <li>电子期刊</li>
-    <li>《小雨点》</li>
-    <li>教师博客</li>
-    <li>班级博客</li>
+    <li><h4>专题</h4></li>
+    <% Category.find(23).children.limit(4).each do |c| %>
+    <li><%= link_to c.title, topic_path(c, c.children.first) %></li>
+    <% end %>
   </ul>
   <ul class="unstyled last">
-    <li><h4>内网链接</h4></li>
+    <li><h4>其它链接</h4></li>
     <li>网上评课</li>
     <li>教学资源</li>
   </ul>

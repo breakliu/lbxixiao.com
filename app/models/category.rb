@@ -10,10 +10,10 @@ class Category < ActiveRecord::Base
   scope :on_top, -> { where(on_top: true) }
 
   def next(id)
-    posts.where("id > ?", id).order(id: :desc).last
+    posts.where("id < ?", id).order(id: :desc).first
   end
 
   def prev(id)
-    posts.where("id < ?", id).order(id: :desc).first
+    posts.where("id > ?", id).order(id: :desc).last
   end
 end

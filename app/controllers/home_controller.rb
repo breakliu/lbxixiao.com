@@ -34,4 +34,9 @@ class HomeController < ApplicationController
       format.json
     end
   end
+
+  def topic_index
+    @topics = Category.find(23).children.page(params[:page]).per(6)
+    render layout: 'topic_index'
+  end
 end
