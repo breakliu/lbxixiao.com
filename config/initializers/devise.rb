@@ -1,13 +1,19 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # The secret key used by Devise. Devise uses this key to generate
+  # random tokens. Changing this key will render invalid all existing
+  # confirmation, reset password and unlock tokens in the database.
+  config.secret_key = '2d2196762cb933debd1e275c6b515b70df8979af41c82a09ce394cb5da76f92f7bebd8a4d25a163f3bf7b52c8d90bfc86953898a799de186a12c71fcd9996bfc'
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
-  # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  # note that it will be overwritten if you use your own mailer class
+  # with default "from" parameter.
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = "Devise::Mailer"
+  # config.mailer = 'Devise::Mailer'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -61,8 +67,8 @@ Devise.setup do |config|
   # If http headers should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
 
-  # The realm used in Http Basic Authentication. "Application" by default.
-  # config.http_authentication_realm = "Application"
+  # The realm used in Http Basic Authentication. 'Application' by default.
+  # config.http_authentication_realm = 'Application'
 
   # It will change confirmation, password recovery and other workflows
   # to behave the same regardless if the e-mail provided was right or wrong.
@@ -76,6 +82,12 @@ Devise.setup do |config|
   # passing :skip => :sessions to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
 
+  # By default, Devise cleans up the CSRF token on authentication to
+  # avoid CSRF token fixation attacks. This means that, when using AJAX
+  # requests for sign in and sign up, you need to get a new CSRF token
+  # from the server. You can disable this option at your own risk.
+  # config.clean_up_csrf_token_on_authentication = true
+
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 10. If
   # using other encryptors, it sets how many times you want the password re-encrypted.
@@ -86,7 +98,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "abdce75ae13588c437c7afab7bdde962274a6d3cac49a3818189b4bad3cb3a9fd2718105d9fd840f3f3a804b3b8ac28e3df5a1cbbf6bbdc7458d539347e7080a"
+  # config.pepper = '94bc2cf72cb4ee2e37800fb0be2595a3aa9b9cb419352e440ebee7c2aa5557dc4a816e04dc2f9565f0866e56ffd66c191f3fabe475f0f74c97b9891890da1ae1'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -211,7 +223,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ["*/*", :html]
+  # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -235,12 +247,12 @@ Devise.setup do |config|
   # is mountable, there are some extra configurations to be taken into account.
   # The following options are available, assuming the engine is mounted as:
   #
-  #     mount MyEngine, at: "/my_engine"
+  #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
   # config.router_name = :my_engine
   #
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = "/my_engine/users/auth"
+  # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
