@@ -67,7 +67,7 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem 'rainbows'
+# gem 'rainbows'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
