@@ -35,6 +35,10 @@ class CimageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process resize_to_fit: [220, 140]
   end
+
+  version :thumb2 do
+    process resize_to_fit: [306, 200]
+  end
   # version :thumb do
   #   process :scale => [50, 50]
   # end

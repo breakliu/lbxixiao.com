@@ -116,7 +116,7 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
   padding: 0px;
 }
 
-#big_title div h3 a { text-decoration: none; color: #008465; font-size: 21px; }
+#big_title div h3 a { text-decoration: none; color: #008465; font-size: 21px; font-weight:normal; }
 #big_title div h3 a:hover { color: #2CAB80; }
 .myul { height: 150px; width: 390px; padding: 0; margin: 0; margin-top: 15px; }
 .myul li { width: 120px; float: left; padding: 0; margin: 0; line-height: 25px; }
@@ -127,7 +127,7 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
 .myul li:nth-child(n+2) { margin-left: 12px; }
 
 #mylink1 { background-color: #EEE; height: 140px; margin: 0 auto; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px dashed #CCC;}
-#mylink1 h4 { font-size: 16px; color: #333; }
+#mylink1 h4 { font-size: 16px; color: #333; font-weight: normal; }
 #mylink1 div { width: 980px; margin: 0px auto;}
 #mylink1 ul { float: left; width: 160px; }
 #mylink1 ul li { height: 25px; line-height: 25px; }
@@ -153,7 +153,7 @@ body { background-color: #FAFAFA; font-family:"Helvetica Neue",Helvetica,"Hiragi
 
 .top-links { height: 20px; background-color: #F5F5F5; }
 .top-links-inner { width: 980px; height: 20px; margin: 0 auto; }
-.top-links-inner div ul li { float: left; padding: 0 10px 0 12px; font-size: 10px; }
+.top-links-inner div ul li { float: left; padding: 0 10px 0 12px; font-size: 12px; }
 .top-links-inner div ul li:nth-child(n+2) { background: url('/images/top-links-spliter.png') no-repeat 0px;}
 .top-links-inner div ul li a { text-decoration: none; color: #666666; }
 .top-links-inner div ul li a:hover { color: #19926F; }
