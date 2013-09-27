@@ -16,6 +16,7 @@ require(['dom/1.0.x/', 'waterfall/1.1.x/'], function($, Waterfall) {
 
   waterfall.on('load', function() {
     $('#loading').hide();
+    jQuery(".group1").colorbox({rel:'group1'});
   });
 
 
