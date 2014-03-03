@@ -30,6 +30,7 @@ module DglbxxCom
       Devise::RegistrationsController.layout "login"
     end
   end
+  I18n.enforce_available_locales = false
 end
 
 SITE_NAME = "东莞市寮步镇西溪小学"
